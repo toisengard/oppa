@@ -1,0 +1,16 @@
+#! /usr/bin/env php
+
+
+<?php
+
+
+use Flugegegenxolen\Make;
+use Symfony\Component\Console\Application;
+
+require 'vendor/autoload.php';
+
+$app = new Application('WP Base', '1.0');
+
+$app -> add(new Make);
+
+$app -> run();
