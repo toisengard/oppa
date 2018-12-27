@@ -50,7 +50,7 @@ $linkedin = get_field("linkedin");
 // echo "<p>".$main_page_descr."</p>";
 $image_holder_in_video_box = get_field("image_holder_in_video_box");
 $socials_text = get_field("socials_text");
-// var_dump($video_holder);
+// var_dump($image_holder_in_video_box);
 
 
 Blade::loadPage( 'pages.front-page',[

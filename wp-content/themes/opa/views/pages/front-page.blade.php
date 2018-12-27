@@ -73,6 +73,9 @@
 					</div>
 				</div>
 				<div class="video-holder rel">
+					<?php if (!empty( $video_holder) ) { ?>
+						<?php echo("shemovedi videoshi ariyo") ?>
+
 					<div class="video-inner-holder">
 						<video controls class="abs" id="video">
 						  <source src="{{$video_holder}}" type="video/mp4">
@@ -92,7 +95,11 @@
 							</svg>
 						</a>
 					</div>
-					<!-- <div class="gif-inner-holder">
+					<?php } ?>
+					@if(!empty($image_holder))
+						<?php echo("shemovedi gif ariyo") ?>
+
+					<div class="gif-inner-holder">
 						<div class="gif-holder bg-cover" style="background-image:url('{{ get_template_directory_uri() }}/assets/dist/images/tenor.gif')">
 							<span class="video-btn-before abs vh-align">
 							</span>
@@ -155,11 +162,15 @@
 							</a>
 						</div>
 					</div>
+					@endif
+						@if(!empty($image_holder_in_video_box) )
+						
 					<div class="image-inner-holder">
-						<div class="image-holder-one  bg-cover rel" style="background-image:url('{{ get_template_directory_uri() }}/assets/dist/images/background-one.jpg')">
+						<div class="image-holder-one  bg-cover rel" style="background-image:url({{$image_holder_in_video_box['url']}})">
 							
 						</div>
-					</div> -->
+					</div>
+						@endif
 				</div>
 
 			</div>

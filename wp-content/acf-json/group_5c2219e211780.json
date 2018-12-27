@@ -200,7 +200,7 @@
             "key": "field_5c221b57933ce",
             "label": "video holder",
             "name": "video_holder",
-            "type": "file",
+            "type": "url",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -209,11 +209,8 @@
                 "class": "",
                 "id": ""
             },
-            "return_format": "url",
-            "library": "all",
-            "min_size": "",
-            "max_size": "",
-            "mime_types": ""
+            "default_value": "",
+            "placeholder": ""
         },
         {
             "key": "field_5c221bd1933cf",
@@ -805,5 +802,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1545903526
+    "modified": 1545921885
 }
