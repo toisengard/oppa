@@ -57,7 +57,7 @@
             "placeholder": "",
             "maxlength": "",
             "rows": "",
-            "new_lines": "wpautop"
+            "new_lines": ""
         },
         {
             "key": "field_5c221a9288ab7",
@@ -194,13 +194,13 @@
             "placeholder": "",
             "maxlength": "",
             "rows": "",
-            "new_lines": "wpautop"
+            "new_lines": ""
         },
         {
             "key": "field_5c221b57933ce",
             "label": "video holder",
             "name": "video_holder",
-            "type": "url",
+            "type": "file",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -209,13 +209,40 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": ""
+            "return_format": "url",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": ""
         },
         {
             "key": "field_5c221bd1933cf",
-            "label": "image holder",
+            "label": "gif holder",
             "name": "image_holder",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5c24941c85d17",
+            "label": "image holder in video box",
+            "name": "image_holder_in_video_box",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -272,7 +299,7 @@
             "placeholder": "",
             "maxlength": "",
             "rows": "",
-            "new_lines": "wpautop"
+            "new_lines": ""
         },
         {
             "key": "field_5c221d97c1a9f",
@@ -436,7 +463,7 @@
                     "placeholder": "",
                     "maxlength": "",
                     "rows": "",
-                    "new_lines": "wpautop"
+                    "new_lines": ""
                 }
             ]
         },
@@ -476,7 +503,7 @@
             "placeholder": "",
             "maxlength": "",
             "rows": "",
-            "new_lines": "wpautop"
+            "new_lines": ""
         },
         {
             "key": "field_5c221ea8aaf85",
@@ -578,7 +605,7 @@
             "placeholder": "",
             "maxlength": "",
             "rows": "",
-            "new_lines": "wpautop"
+            "new_lines": ""
         },
         {
             "key": "field_5c222e184ccd7",
@@ -740,6 +767,25 @@
             },
             "default_value": "",
             "placeholder": ""
+        },
+        {
+            "key": "field_5c2494f4e036c",
+            "label": "socials text",
+            "name": "socials_text",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -759,5 +805,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1545829074
+    "modified": 1545903526
 }

@@ -6,13 +6,14 @@ $lang = icl_get_languages('skip_missing=0');
 if($lang['en']["active"]==1){
     
     $lan = "geo";
-    $url = $lang["sk"]["url"];
+    $url = $lang["ka"]["url"];
 }
 else{
     $lan = "en";
     $url = $lang["en"]["url"];
 
 }
+// var_dump($lang["ka"]["url"]);
 $main_title = get_field("main_title");
 $main_title_description = get_field("main_title_description");
 $main_description = get_field("main_description");
@@ -47,7 +48,9 @@ $linkedin = get_field("linkedin");
 // postis id unda gadavce meore parametrad gadatargmnili postis id gadavce get fields apply filter worpress function wpml filter
 // echo "<h1>".$main_page_title."</h1>";
 // echo "<p>".$main_page_descr."</p>";
-var_dump($url);
+$image_holder_in_video_box = get_field("image_holder_in_video_box");
+$socials_text = get_field("socials_text");
+// var_dump($video_holder);
 
 
 Blade::loadPage( 'pages.front-page',[
@@ -82,6 +85,7 @@ Blade::loadPage( 'pages.front-page',[
 	"main_background" => $main_background ,
 	"facebook" => $facebook,
 	"linkedin" => $linkedin,
-	"main_background" => $main_background
-
+	"main_background" => $main_background,
+	"socials_text" => $socials_text,
+	"image_holder_in_video_box" => $image_holder_in_video_box
 ]);

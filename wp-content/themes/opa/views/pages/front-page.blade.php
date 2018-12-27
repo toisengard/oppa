@@ -15,7 +15,7 @@
 				</div>
 
 				<div class="language rel flex center" style="">
-					<a href="{{$uri}}" alt="" class="title s white on flex flex-vhcenter abs">
+					<a href="{{$url}}" alt="" class="title s white on flex flex-vhcenter abs">
 						{{$lan}}
 					</a>
 					
@@ -35,34 +35,16 @@
 					{{$main_description}}
 			</div>
 			<div class="first-section-benefits flex flex-between">
+				@foreach($main_features as $feature)
 				<div class="section-benefit-holder   flex flex-vhcenter">
-					<div class="benefit-icon" style="background-image:url('{{$main_background["url"]}}')">
+					<div class="benefit-icon" style="background-image:url( {{$feature['main_feature_icon']['url']}} )">
 					</div>
 					<div class="benefit-text text m">
-						ფონდი ვიკიმედია, ვიკიპედიის ორგანიზატორი
+						{{$feature['main_feature_one']}}
 					</div>
 				</div>
-				<div class="section-benefit-holder flex flex-vhcenter">
-					<div class="benefit-icon" style="background-image:url('{{ get_template_directory_uri() }}/assets/dist/images/value.png'))">
-					</div>
-					<div class="benefit-text text m">
-						მფლობელი კომპანია ასევე ახორციელებს
-					</div>
-				</div>
-				<div class="section-benefit-holder flex flex-vhcenter">
-					<div class="benefit-icon" style="background-image:url('{{ get_template_directory_uri() }}/assets/dist/images/value.png'))">
-					</div>
-					<div class="benefit-text text m">
-						პუბლიკაციის სხვა თავისუფალ პროექტებს
-					</div>
-				</div>
-				<div class="section-benefit-holder flex flex-vhcenter">
-					<div class="benefit-icon" style="background-image:url('{{ get_template_directory_uri() }}/assets/dist/images/value.png'))">
-					</div>
-					<div class="benefit-text text m">
-						საერთაშორისო უნივერსიტეტი, დისტანციური
-					</div>
-				</div>
+				@endforeach
+				
 			</div>
 			<div class="claim-holder">
 				<a href="{{$button_one_url}}" class="claim btn btn-round title s flex flex-vhcenter white rel">
@@ -84,32 +66,102 @@
 						</div>
 					</div>
 					<div class="claim-holder">
-						<a href="" class="claim btn btn-round title s flex flex-vhcenter white rel">
+						<a href="{{$button_two_url}}" class="claim btn btn-round title s flex flex-vhcenter white rel">
 							{{$button_two_text}}
 						</a>
 						
 					</div>
 				</div>
 				<div class="video-holder rel">
-					<video controls class="abs" id="video">
-					  <source src="./video/grendaizer.mp4" type="video/mp4">
-					  Your browser does not support the video tag.
-					</video>
-					<span class="video-btn-before abs vh-align">
-					</span>
-					<a class="video-btn abs vh-align flex flex-vhcenter">
-						<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-							 viewBox="0 0 191.255 191.255" style="enable-background:new 0 0 191.255 191.255;" xml:space="preserve">
-						<path d="M162.929,66.612c-2.814-1.754-6.514-0.896-8.267,1.917s-0.895,6.513,1.917,8.266c6.544,4.081,10.45,11.121,10.45,18.833
-							s-3.906,14.752-10.45,18.833l-98.417,61.365c-6.943,4.329-15.359,4.542-22.512,0.573c-7.154-3.97-11.425-11.225-11.425-19.406
-							V34.262c0-8.181,4.271-15.436,11.425-19.406c7.153-3.969,15.569-3.756,22.512,0.573l57.292,35.723
-							c2.813,1.752,6.513,0.895,8.267-1.917c1.753-2.812,0.895-6.513-1.917-8.266L64.512,5.247c-10.696-6.669-23.661-7-34.685-0.883
-							C18.806,10.48,12.226,21.657,12.226,34.262v122.73c0,12.605,6.58,23.782,17.602,29.898c5.25,2.913,10.939,4.364,16.616,4.364
-							c6.241,0,12.467-1.754,18.068-5.247l98.417-61.365c10.082-6.287,16.101-17.133,16.101-29.015S173.011,72.899,162.929,66.612z"/>
+					<!-- <div class="video-inner-holder">
+						<video class="abs" id="video">
+						  <source src="{{$video_holder}}" type="video/mp4">
+						</video>
+						<span class="video-btn-before abs vh-align">
+						</span>
+						<a class="video-btn abs vh-align flex flex-vhcenter">
+							<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+								 viewBox="0 0 191.255 191.255" style="enable-background:new 0 0 191.255 191.255;" xml:space="preserve">
+							<path d="M162.929,66.612c-2.814-1.754-6.514-0.896-8.267,1.917s-0.895,6.513,1.917,8.266c6.544,4.081,10.45,11.121,10.45,18.833
+								s-3.906,14.752-10.45,18.833l-98.417,61.365c-6.943,4.329-15.359,4.542-22.512,0.573c-7.154-3.97-11.425-11.225-11.425-19.406
+								V34.262c0-8.181,4.271-15.436,11.425-19.406c7.153-3.969,15.569-3.756,22.512,0.573l57.292,35.723
+								c2.813,1.752,6.513,0.895,8.267-1.917c1.753-2.812,0.895-6.513-1.917-8.266L64.512,5.247c-10.696-6.669-23.661-7-34.685-0.883
+								C18.806,10.48,12.226,21.657,12.226,34.262v122.73c0,12.605,6.58,23.782,17.602,29.898c5.25,2.913,10.939,4.364,16.616,4.364
+								c6.241,0,12.467-1.754,18.068-5.247l98.417-61.365c10.082-6.287,16.101-17.133,16.101-29.015S173.011,72.899,162.929,66.612z"/>
 
-						</svg>
-					</a>
-				</div>	
+							</svg>
+						</a>
+					</div> -->
+					<div class="gif-inner-holder">
+						<div class="gif-holder bg-cover" style="background-image:url('{{ get_template_directory_uri() }}/assets/dist/images/tenor.gif')">
+							<span class="video-btn-before abs vh-align">
+							</span>
+							<a class="video-btn gif abs vh-align flex flex-vhcenter">
+								
+								<?xml version="1.0" encoding="utf-8"?>
+								<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+								<svg version="1.1" id="Layer_1"  fill="#ffffff" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+									 viewBox="0 0 62.5 62.5" style="enable-background:new 0 0 62.5 62.5;" xml:space="preserve">
+								<style type="text/css">
+									.st0{fill:#ffffff;}
+								</style>
+								<g>
+									<path class="st0" d="M22,30.6v2.2h2.9v2.9c-0.3,0.2-0.7,0.3-1,0.4c-0.5,0.1-1,0.2-1.6,0.2c-1.5,0-2.6-0.4-3.3-1.2
+										c-0.7-0.8-1.1-2.1-1.1-3.7c0-1.7,0.4-2.9,1.1-3.8c0.7-0.8,1.9-1.2,3.3-1.2c0.8,0,1.5,0.1,2.2,0.4c0.7,0.3,1.4,0.7,2,1.2l0.6,0.5
+										v-2.9l-0.2-0.1c-0.7-0.4-1.4-0.8-2.2-1c-0.8-0.2-1.7-0.3-2.5-0.3c-2.1,0-3.9,0.6-5.1,1.9c-1.2,1.3-1.8,3-1.8,5.3
+										c0,2.2,0.6,4,1.8,5.3c1.2,1.3,2.9,1.9,5.1,1.9c1,0,1.9-0.1,2.8-0.4c0.9-0.3,1.7-0.6,2.4-1.2l0.2-0.1v-6.2H22z"/>
+									<rect x="30.8" y="24.3" class="st0" width="2.5" height="13.9"/>
+									<polygon class="st0" points="45.3,26.6 45.3,24.3 37,24.3 37,38.2 39.5,38.2 39.5,31.9 44.7,31.9 44.7,29.7 39.5,29.7 39.5,26.6 	
+										"/>
+								</g>
+								<g>
+									<circle class="st0" cx="60.7" cy="31.3" r="1.7"/>
+									<circle class="st0" cx="60.3" cy="36.5" r="1.7"/>
+									<circle class="st0" cx="58.8" cy="41.6" r="1.7"/>
+									<circle class="st0" cx="56.5" cy="46.4" r="1.7"/>
+									<circle class="st0" cx="53.4" cy="50.7" r="1.7"/>
+									<circle class="st0" cx="49.6" cy="54.4" r="1.7"/>
+									<circle class="st0" cx="45.2" cy="57.3" r="1.7"/>
+									<circle class="st0" cx="40.3" cy="59.4" r="1.7"/>
+									<circle class="st0" cx="35.1" cy="60.6" r="1.7"/>
+									<circle class="st0" cx="29.8" cy="60.8" r="1.7"/>
+									<circle class="st0" cx="24.6" cy="60.1" r="1.7"/>
+									<circle class="st0" cx="19.5" cy="58.4" r="1.7"/>
+									<circle class="st0" cx="14.9" cy="55.9" r="1.7"/>
+									<circle class="st0" cx="10.7" cy="52.6" r="1.7"/>
+									<circle class="st0" cx="7.2" cy="48.6" r="1.7"/>
+									<circle class="st0" cx="4.5" cy="44.1" r="1.7"/>
+									<circle class="st0" cx="2.7" cy="39.1" r="1.7"/>
+									<circle class="st0" cx="1.7" cy="33.9" r="1.7"/>
+									<circle class="st0" cx="1.7" cy="28.6" r="1.7"/>
+									<circle class="st0" cx="2.7" cy="23.4" r="1.7"/>
+									<circle class="st0" cx="4.5" cy="18.4" r="1.7"/>
+									<circle class="st0" cx="7.2" cy="13.9" r="1.7"/>
+									<circle class="st0" cx="10.7" cy="9.9" r="1.7"/>
+									<circle class="st0" cx="14.9" cy="6.6" r="1.7"/>
+									<circle class="st0" cx="19.5" cy="4.1" r="1.7"/>
+									<circle class="st0" cx="24.6" cy="2.4" r="1.7"/>
+									<circle class="st0" cx="29.8" cy="1.7" r="1.7"/>
+									<circle class="st0" cx="35.1" cy="2" r="1.7"/>
+									<circle class="st0" cx="40.3" cy="3.1" r="1.7"/>
+									<circle class="st0" cx="45.2" cy="5.2" r="1.7"/>
+									<circle class="st0" cx="49.6" cy="8.1" r="1.7"/>
+									<circle class="st0" cx="53.4" cy="11.8" r="1.7"/>
+									<circle class="st0" cx="56.5" cy="16.1" r="1.7"/>
+									<circle class="st0" cx="58.8" cy="20.9" r="1.7"/>
+									<circle class="st0" cx="60.3" cy="26" r="1.7"/>
+								</g>
+								</svg>
+
+							</a>
+						</div>
+					</div>
+					<!-- <div class="image-inner-holder">
+						<div class="image-holder-one  bg-cover rel" style="background-image:url('{{ get_template_directory_uri() }}/assets/dist/images/background-one.jpg')">
+							
+						</div>
+					</div> -->
+				</div>
 
 			</div>
 		</div>
@@ -124,155 +176,77 @@
 					</div>
 			 	</div>
 			 	<div class="features flex flex-between">
+			 		@foreach($secondary_features as $feature)
 					<div class="feature flex column">
-						<div class="feature-icon" style="background-image:url('./images/features_icon-01.svg')">
+						<div class="feature-icon" style="background-image:url({{$feature['second_feature_icon']['url']}})">
 							
 						</div>
 						<div class="feature-title title s green ">
-							გიფიქრია ელვირა
+							{{$feature["second_feature_title"]}}
 						</div>
 						<div class="feature-description text s green ">
-							ყველა მათგანს უფლება აქვს დაწეროს სტატია ნებისმიერ თემაზე და შეასწოროს სხვის მიერ უკვე დაწერილი სტატია.
+							{{$feature["second_feature_text"]}}
 						</div>
 					</div>
-					<div class="feature flex column">
-						<div class="feature-icon" style="background-image:url('./images/features_icon-01.svg')">
-							
-						</div>
-						<div class="feature-title title s green ">
-							არ მიფიქრია არაფერზე
-						</div>
-						<div class="feature-description text s green ">
-							მეტ ვალდებულებებს აკისრებს, ვიდრე რაიმე უფლებებს ანიჭებს.
-						</div>
-					</div>
-					<div class="feature flex column">
-						<div class="feature-icon" style="background-image:url('./images/features_icon-01.svg')">
-							
-						</div>
-						<div class="feature-title title  s green ">
-							ვიკიპედიას არ ჰყავს რედაქტორთა
-						</div>
-						<div class="feature-description text s green ">
-							ვიკიპედიას არ ჰყავს რედაქტორთა ცენტრალიზებული შემადგენლობა, მთელი მასალა ივსება მონაწილეების
-						</div>
-					</div>
+					@endforeach
 				</div>
 		 	</div>
 		 </div> 
 	</div>
 	<div class="section third flex flex-center column pat">
 		<div class="image-blocks-holder flex flex-between wrapper">
+			<?php $i=1 ?>
+			@foreach($features_with_image as $feature)
 			<div class="image-block rel">
-				<div class="image-holder bg-cover" style="background-image:url('./images/1.png')">
+				<div class="image-holder bg-cover" style="background-image:url({{$feature['feature_with_image_image']['url']}})">
 					
 				</div>
 				<div class="image-text-holder flex column rel">
 					<div class="image-text-holder-title flex">
 						<div class="text-number  flex title xxl blue">
-							<span>
-								01
-							</span>
+							
+								<?php echo("<span>0".$i."</span>") ?>
+							
 							<span>
 								.
 							</span>
 						</div>
 						<div class="text-title title s blue">
-							გიფიქრია ელვირა შეიტანეს
-							ქონებაც ამქვეყნად 
+							{{$feature["feature_with_image_title"]}}
 						</div>
 					</div>
 					<div class="image-text blue text m">
-						ნარცისიზმში გვიყურებს მემატიანემ მათგან მენტებს, მოტირალენი წევრი ნარცისიზმში გვიყურებს ტიანემ მათგან აბონემენტებს, მოტირალენი წევრი თითი ხლება თითი ნარცისიზმში გვიყურებს მემატიანემ მათგან აბონემენტებს, მოტირალენი წევრი ცისიზმში ყურებს მემატიანემ მათგან.
+						{{$feature["feature_with_image_text"]}}
 					</div>
 				</div>
 			</div>
-			<div class="image-block rel">
-				<div class="image-holder bg-cover" style="background-image:url('./images/1.png')">
-					
-				</div>
-				<div class="image-text-holder flex column rel">
-					<div class="image-text-holder-title flex">
-						<div class="text-number flex  title xxl blue">
-							<span>
-								02
-							</span>
-							<span>
-								.
-							</span>
-						</div>
-						<div class="text-title  title s blue">
-							გიფიქრია ელვირა შეიტანეს
-							ქონებაც ამქვეყნად 
-						</div>
-					</div>
-					<div class="image-text blue text m">
-						ნარცისიზმში გვიყურებს მემატიანემ მათგან მენტებს, მოტირალენი წევრი ნარცისიზმში გვიყურებს ტიანემ მათგან აბონემენტებს, მოტირალენი წევრი თითი ხლება თითი ნარცისიზმში 
-					</div>
-				</div>
-			</div>
-			<div class="image-block rel">
-				<div class="image-holder bg-cover" style="background-image:url('./images/1.png')">
-					
-				</div>
-				<div class="image-text-holder flex column rel">
-					<div class="image-text-holder-title flex">
-						<div class="text-number flex  title xxl blue">
-							<span>
-								03
-							</span>
-							<span>
-								.
-							</span>
-						</div>
-						<div class="text-title  title s blue">
-							გიფიქრია ელვირა შეიტანეს
-							ქონებაც ამქვეყნად 
-						</div>
-					</div>
-					<div class="image-text blue text m">
-						ნარცისიზმში გვიყურებს მემატიანემ მათგან მენტებს, მოტირალენი წევრი ნარცისიზმში გვიყურებს ტიანემ მათგან აბონემენტებს, მოტირალენი წევრი თითი ხლება თითი ნარცისიზმში გვიყურებს მემატიანემ მათგან აბონემენტებს, მოტირალენი წევრი ცისიზმში ყურებს მემატიანემ მათგან.
-					</div>
-				</div>
-			</div>
+			<?php $i++ ?>
+			@endforeach
 		</div>
 		<div class="claim-holder">
-			<a href="" class="claim btn btn-round title s flex flex-vhcenter white rel">
-				განაცხადი
+			<a href="{{$button_three_url}}" class="claim btn btn-round title s flex flex-vhcenter white rel">
+				{{$button_three_text}}
 			</a>
 		</div>
 		<div class="text-holder-one flex-center center">
 			<div class="main-title title l blue">
-				გიფიქრია ელვირა შეიტანეს ქონებაც ამქვეყნად მაგალითად 
+				{{$third_title}}
 			</div>
-			
 			<div class="main-description text  m blue">
-				დღეს ფულის მართვა საკმაოდ დიდი თავის ტკივილია - უამრავი ვალდებულება, დაგროვების ბარათი და მოულოდნელი ტრანზაქცია ცხოვრებას, უბრალოდ
+				{{$third_text}}
 			</div>
-
 		</div>
 		<div class="third-section-benefits flex flex-between wrapper-l">
+			@foreach($third_features as $feature)
 			<div class="section-benefit-holder flex flex-vhcenter">
-				<div class="benefit-icon" style="background-image:url('./images/value.png')">
+				<div class="benefit-icon" style="background-image:url({{$feature['third_feature_icon']['url']}})">
 				</div>
 				<div class="benefit-text title s blue">
-					მფლობელი კომპანია ასევე ახორციელებს ინტერნეტში
+					{{$feature["third_feature_text"]}}
 				</div>
 			</div>
-			<div class="section-benefit-holder flex flex-vhcenter">
-				<div class="benefit-icon" style="background-image:url('./images/value.png')">
-				</div>
-				<div class="benefit-text title s blue">
-					პუბლიკაციის სხვა თავისუფალ პროექტებს
-				</div>
-			</div>
-			<div class="section-benefit-holder flex flex-vhcenter">
-				<div class="benefit-icon" style="background-image:url('./images/value.png')">
-				</div>
-				<div class="benefit-text title s blue">
-					საერთაშორისო უნივერსიტეტი, დისტანციური სწავლებით
-				</div>
-			</div>
+			@endforeach
+			
 		</div>
 
 
@@ -280,25 +254,25 @@
 	<div class="section fourth flex  flex-vhcenter column">
 		<div class="text-holder-two flex-center center">
 			<div class="main-title title l blue ">
-				გიფიქრია ელვირა შეიტანეს ქონებაც ამქვეყნად მაგალითად 
+				{{$fourth_title}}
 			</div>
 			<div class="main-description text m blue">
-				დღეს ფულის მართვა საკმაოდ დიდი თავის ტკივილია - უამრავი ვალდებულება, დაგროვების ბარათი და მოულოდნელი ტრანზაქცია ცხოვრებას, უბრალოდ
+				{{$fourth_text}}
 			</div>
 		</div>
 		<div class="claim-holder">
-			<a href="" class="claim btn btn-round title s flex flex-vhcenter white rel">
-				განაცხადი
+			<a href="{{$button_four_url}}" class="claim btn btn-round title s flex flex-vhcenter white rel">
+				{{$button_four_text}}
 			</a>
 		</div>
 	</div>
 	<div class="footer flex rel">
 		<div class="follow-us flex flex-between abs">
 			<span class="title xs grey">
-				შემოგვიერთდი
+				{{$socials_text}}
 			</span>
 			<div class="socials flex  flex-between">
-				<a href="">
+				<a href="{{$facebook}}">
 					
 					<?xml version="1.0" encoding="utf-8"?>
 					<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
@@ -311,7 +285,7 @@
 					</svg>
 
 				</a>
-				<a href="">
+				<a href="{{$linkedin}}">
 					
 					<?xml version="1.0" encoding="utf-8"?>
 					<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
