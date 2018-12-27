@@ -73,8 +73,8 @@
 					</div>
 				</div>
 				<div class="video-holder rel">
-					<!-- <div class="video-inner-holder">
-						<video class="abs" id="video">
+					<div class="video-inner-holder">
+						<video controls class="abs" id="video">
 						  <source src="{{$video_holder}}" type="video/mp4">
 						</video>
 						<span class="video-btn-before abs vh-align">
@@ -91,15 +91,14 @@
 
 							</svg>
 						</a>
-					</div> -->
-					<div class="gif-inner-holder">
+					</div>
+					<!-- <div class="gif-inner-holder">
 						<div class="gif-holder bg-cover" style="background-image:url('{{ get_template_directory_uri() }}/assets/dist/images/tenor.gif')">
 							<span class="video-btn-before abs vh-align">
 							</span>
 							<a class="video-btn gif abs vh-align flex flex-vhcenter">
 								
 								<?xml version="1.0" encoding="utf-8"?>
-								<!-- Generator: Adobe Illustrator 21.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 								<svg version="1.1" id="Layer_1"  fill="#ffffff" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 									 viewBox="0 0 62.5 62.5" style="enable-background:new 0 0 62.5 62.5;" xml:space="preserve">
 								<style type="text/css">
@@ -156,7 +155,7 @@
 							</a>
 						</div>
 					</div>
-					<!-- <div class="image-inner-holder">
+					<div class="image-inner-holder">
 						<div class="image-holder-one  bg-cover rel" style="background-image:url('{{ get_template_directory_uri() }}/assets/dist/images/background-one.jpg')">
 							
 						</div>

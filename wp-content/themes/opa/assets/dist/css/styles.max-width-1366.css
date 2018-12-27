@@ -1,0 +1,11 @@
+/**
+* Media Query - Maximum Width 1366px
+*/
+
+@media screen and (max-width: 1366px) {
+html{
+	font-size:14px;
+}
+
+
+}
