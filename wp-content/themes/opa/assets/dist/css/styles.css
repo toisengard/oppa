@@ -614,6 +614,7 @@ html {
 }
 .benefit-text{
 	margin-left:1.375rem;
+	width:80%;
 }
 .language{
 	border: 2px solid white;
@@ -663,7 +664,7 @@ html {
 	left:-0.3125rem;
 	top:-0.3125rem;
 	border-radius:45px;
-	z-index:1;
+	z-index:-1;
 }
 .claim:after{
 	content:'';
@@ -674,7 +675,7 @@ html {
 	left:-0.625rem;
 	top:-0.625rem;
 	border-radius:2.5rem;
-	z-index:0;
+	z-index:-10;
 	border-radius:50px;
 }
 /*second section*/
@@ -811,8 +812,22 @@ html {
 .section.second{
 	
 }
+.video-inner-holder{
+	position:absolute;
+	 top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 #video{
-border-radius:30px;
+	 position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+
 }
 .pat{
 		background-color:#f8f8f8;
@@ -1088,6 +1103,7 @@ border-radius:30px;
 	.header{
 		height:100px;
 	}
+
 	.header-inner-holder {
 	    width: 92.84%;
 	}
@@ -1128,18 +1144,21 @@ border-radius:30px;
 		font-size:14px;
 	}
 	.header{
-		height:150px;
+		height:80px;
+	}
+	.header.not-transparent{
+		background:white;
 	}
 	.header-inner-holder {
-	    width:88%;
+	    width:89%;
 	}
 	.logo{
-	    width: 163px;
-	    padding-top: 61px;
+		width: 109px;
+		padding-top: 41px;
 	}
 	.section.first {
 	    justify-content: normal;
-	    padding-top: 150px;
+	    padding-top: 108px;
 	}
 	.first-section-holder {
 	    height: auto;
@@ -1162,14 +1181,14 @@ border-radius:30px;
 	.section-benefit-holder{
 		width:100%;
 		margin-bottom:20px;
-		padding:2.2em 11%;
+		padding:1rem 5%;
 	    justify-content:normal;
 	} 
 	.section-benefit-holder:last-child{
 	    margin-bottom:0px;
 	}
 	.main-title-description{
-		margin-bottom:40px;
+		margin-bottom:38px;
 	    font-size: 1rem!important;
 	}
 	.first .main-title {
@@ -1179,25 +1198,203 @@ border-radius:30px;
 	    height: auto;
 	}
 	.first .main-description {
-	    font-size: 16px;
-	    line-height: 26px;
-	    margin-bottom:40px;
+	        font-size: 18px;
+    line-height: 26px;
+    margin-bottom: 40px;
+    font-size: 1.2857142857142858rem;
+    line-height: 2rem;
 	}
 	.benefit-text {
 	    margin-left: 7%;
 	    font-size: 1rem!important;
 	}
 	.benefit-icon {
-	    width: 55px;
-	    height: 49px;
+	        width: 55px;
+    height: 42px;
+    background-size: 80%;
+
 	}
 	.first .claim-holder{
 		margin-top:40px;
 		margin-bottom:49px;
 	}
 	.first .claim {
-	    height: 80px;
+	    height: 77px;
+	}
+	.claim a{
+		font-size: 1.7142857142857142rem;
+		letter-spacing:1px;
+	}
+	.section-with-video {
+	    width: 88%;
+	    margin: 0 auto;
+	    padding-top: 30px;
+	    padding-bottom: 30px;
+	    flex-direction: column-reverse;
+	}
+	.video-holder {
+	    width: 100%;
+	    padding-top: 82%;
+	    border-radius: 20px;
+	    overflow: hidden;
+	    margin-bottom: 40px;
+	}
+	.second-section-content {
+	    width: 100%;
+	}
+	.second-content-holder .main-title {
+	    margin-bottom: 1.92rem;
+	    font-size: 1.57rem;
+	    line-height: 2.2rem;
+	}
+	.second-content-holder .main-description {
+	    margin-bottom: 3.71rem;
+	    font-size: 1.28rem;
+	    line-height: 1.65em;
+	}
+	.features-holder {
+	    padding: 3.1875rem 0 2rem;
+	}
+	.feature-box{
+		    width: 88%;
+	    flex-direction: column;
+	}
+	.feature-box .feature-main-description {
+	    width: 100%;
+	    margin-bottom: 3.7rem;
+	}
+	.features {
+	    width: 100%;
+	    flex-direction: column;
+	}
+	.feature {
+	    width: 100%;
+	    flex-direction: row;
+	    justify-content: baseline;
+	    vertical-align: top;
+	    margin-bottom:3rem;
+	}
+	.feature .flex.column{
+
+   	 margin-left: 2.14rem;
+	}
+	.feature .flex.column .feature-title {
+	    font-size: 1.42rem!important;
+	    line-height: 1.68em!important;
+	    padding-top: 3px;
+	    height: auto;
+	    margin-bottom: 2.14rem;
+	}
+	.feature .flex.column .feature-description{
+		    font-size: 1.28rem;
+		    line-height:1.6rem;
+
+	}
+	.feature .flex.column .feature-description{
+		font-size: 1.1rem;
+	    line-height: 1.8rem;
+	}
+	.section.third {
+    padding-top: 0rem;
+    padding-bottom: 0px;
+	}
+	.image-blocks-holder {
+	    margin-bottom: 3.5rem;
+	    width: 88%;
+	    flex-direction:column;
+	}
+	.image-block {
+	    width: 100%;
+	    border-radius: 25px;
+	    margin-bottom: 2.78rem;
+	}
+	.image-block:last-child{
+		margin-bottom:0px;
+	}
+	.image-text-holder {
+	    padding: 1.675em 6% 3.43em 6%;
+	}
+	.title.xxl {
+	    font-size: 2.57rem;
+	    margin-right: 15px;
+	}
+	.image-text-holder .text-title{
+		font-size: 1.57rem;
+    line-height: 1.8em;
+	}
+	.title.xxl {
+	    font-size: 2.57rem;
+	    margin-right: 15px;
+	    margin-top: 7px;
+	}
+	.image-text {
+	    margin-top: 26px;
+	    font-size: 1.2857142857142858rem;
+	}
+	.text-holder-one, .text-holder-two {
+	    width: 88%;
+	    text-align: left;
+	    margin-top: 3.5rem;
 	}
 
-	
+	.text-holder-one {
+	    margin-top: 3.5rem;
+	    margin-bottom: 2em;
+	}
+	.text-holder-one .main-title, .text-holder-two .main-title {
+	    margin-bottom: 1.5769230769230769em;
+	    font-size: 1.57rem;
+	    line-height: 1.9rem;
+	}
+	.text-holder-one .main-title, .text-holder-two .main-title
+	{
+		font-size:1.28rem;
+	}
+	.third-section-benefits{
+		    width: 88%;
+	    flex-direction: column;
+	}
+	.third-section-benefits .section-benefit-holder {
+	    width: 100%;
+	    height: auto;
+	    padding: 30px 6%;
+	    margin-bottom:2.07rem;
+	}
+	.third-section-benefits .benefit-text {
+	    font-size: 1.28rem!important;
+	    line-height:1.46rem;
+	}
+	.third-section-benefits .benefit-icon {
+	    height: 56px;
+
+	}
+	.section.fourth {
+	    padding: 3.5rem 0 3.5rem;
+	}
+	.text-holder-two {
+	    margin-top: 0px;
+	}
+	.footer {
+	    height: 8rem;
+	    display: flex;
+	    justify-content: center;
+	    align-items: center;
+	}
+	.footer:after {
+	    height: 1rem;
+	}
+	.follow-us {
+	    width: 278px;
+	    position: relative;
+	    top: auto;
+	    left: auto;
+	}
+	.follow-us .title{
+		font-size:1.2rem;
+	}
+	.third-section-benefits .benefit-text {
+	    font-size: 1.28rem!important;
+	    line-height: 1.66rem;
+	    width: 75%;
+	}
 }

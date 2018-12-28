@@ -7,9 +7,13 @@
 	<div class="section first vh-100 rel flex column flex-vhcenter">
 		<div class="background fullh abs bg-cover" style="background-image:url('{{ get_template_directory_uri() }}/assets/dist/images/background-one.jpg')">
 		</div>
-		<header class="flex flex-vhcenter header">
+		<header class="flex flex-vhcenter header transparent">
 			<div class="header-inner-holder flex flex-between flex-vcenter"> 
-				<div class="logo rel flex flex-center bg-cover" style="background-image:url('{{ get_template_directory_uri() }}/assets/dist/images/main-logo.png')">
+				<div class="logo on rel flex flex-center bg-cover" style="background-image:url('{{ get_template_directory_uri() }}/assets/dist/images/main-logo.png')">
+					<a href="" alt=""  class="abs">
+					</a>
+				</div>
+				<div class="logo-two rel flex flex-center bg-cover" style="background-image:url('{{ get_template_directory_uri() }}/assets/dist/images/logo-01.png')">
 					<a href="" alt=""  class="abs">
 					</a>
 				</div>
@@ -74,15 +78,18 @@
 				</div>
 				<div class="video-holder rel">
 					<?php if (!empty( $video_holder) ) { ?>
-						<?php echo("shemovedi videoshi ariyo") ?>
+						<?php  ?>
 
 					<div class="video-inner-holder">
-						<video controls class="abs" id="video">
+						<!-- <video controls class="abs" id="video">
 						  <source src="{{$video_holder}}" type="video/mp4">
-						</video>
+						</video> -->
+						<iframe class="abs" id="video"
+							src="{{$video_holder}}" frameborder="0" gesture="media" allow="encrypted-media;" allowfullscreen>
+						</iframe>
 						<span class="video-btn-before abs vh-align">
 						</span>
-						<a class="video-btn abs vh-align flex flex-vhcenter">
+						<a class="video-btn abs vh-align flex flex-vhcenter" id="videobtn">
 							<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 								 viewBox="0 0 191.255 191.255" style="enable-background:new 0 0 191.255 191.255;" xml:space="preserve">
 							<path d="M162.929,66.612c-2.814-1.754-6.514-0.896-8.267,1.917s-0.895,6.513,1.917,8.266c6.544,4.081,10.45,11.121,10.45,18.833
@@ -103,7 +110,7 @@
 						<div class="gif-holder bg-cover" style="background-image:url('{{ get_template_directory_uri() }}/assets/dist/images/tenor.gif')">
 							<span class="video-btn-before abs vh-align">
 							</span>
-							<a class="video-btn gif abs vh-align flex flex-vhcenter">
+							<a class="video-btn gif abs vh-align flex flex-vhcenter" id="gifbtn">
 								
 								<?xml version="1.0" encoding="utf-8"?>
 								<svg version="1.1" id="Layer_1"  fill="#ffffff" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -191,11 +198,14 @@
 						<div class="feature-icon" style="background-image:url({{$feature['second_feature_icon']['url']}})">
 							
 						</div>
-						<div class="feature-title title s green ">
-							{{$feature["second_feature_title"]}}
-						</div>
-						<div class="feature-description text s green ">
-							{{$feature["second_feature_text"]}}
+						<div class="flex column">
+
+							<div class="feature-title title s green ">
+								{{$feature["second_feature_title"]}}
+							</div>
+							<div class="feature-description text s green ">
+								{{$feature["second_feature_text"]}}
+							</div>
 						</div>
 					</div>
 					@endforeach

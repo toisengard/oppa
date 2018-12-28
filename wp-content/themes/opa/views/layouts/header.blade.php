@@ -7,7 +7,7 @@
 
 	    <title>WP BASE</title>
 
-	    <link href="{{ get_template_directory_uri() . '/favicon.ico' }}" rel="icon" type="image/x-icon">
+	    <link href="{{ get_template_directory_uri() . '/assets/dist/images/favicon.png' }}" rel="icon" type="image/x-icon">
 	    
 	    <!-- Facebook OG Tags -->
 	    <meta property="og:type" content=""/>

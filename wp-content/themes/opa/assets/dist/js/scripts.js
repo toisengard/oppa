@@ -1,7 +1,8 @@
 
 jQuery(document).ready(function() {
 
-    // language();
+    clickVideo();
+     scrollLogo()
 });
 
 // function language(){
@@ -14,23 +15,32 @@ jQuery(document).ready(function() {
 //     })
 // }
 function clickVideo(){
-	onclick="this.paused ? this.play() : this.pause();"
+	  $('#videobtn').on('click', function(ev) {
+	  	alert('clicked');
+	  	$("#videobtn").hide();
+	  	$("#videobtn").siblings(".video-btn-before").hide();
+ 	$("#video").addClass("playing");
+    $("#video")[0].src += "?autoplay=1";
+    ev.preventDefault();
+ 
+  });
 }
-// function scrollLogo{
+
+function scrollLogo(){
 
         
-//         jQuery(window).scroll(function(){
+        jQuery(window).scroll(function(){
             
-//             if(jQuery(window).scrollTop() >1)
-//             {
-//                 jQuery('.current_page_item').removeClass('active-hover-transparent').addClass('active-hover');
+            if(jQuery(window).scrollTop() >0)
+            {
+                jQuery('.header').removeClass('transparent').addClass('not-transpare');
                 
-//             }
-//             else
-//             {
-//                 jQuery('.current_page_item').addClass('active-hover-transparent');
-//             }
-//         });
+            }
+            else
+            {
+                jQuery('.header').removeClass('not-transparent').addClass('transparent');
+            }
+        });
     
     
-// }
+}
