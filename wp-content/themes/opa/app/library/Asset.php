@@ -52,6 +52,10 @@ class Asset
 
 			// $class::registerScript( $uri . '/assets/dist/js', 'vendor.js' );
 			$class::registerScript( 'all', $uri . '/assets/dist/js', 'jquery-3.3.1.min.js' );
+			$class::registerScript( 'all', $uri . '/assets/dist/js', 'gifffer.min.js' );
+			$class::registerScript( 'all', $uri . '/assets/dist/js', 'jquery.scrollify.js' );
+			
+			
 			$class::registerScript( 'all', $uri . '/assets/dist/js', 'scripts.js' );
 			// $class::registerScript( [ 'front' 	 => true ], $uri . '/assets/dist/js', 'front-page.js', 'front' );
 			// $class::registerScript( [ 'template' => 'campaigns' ], $uri . '/assets/dist/js', 'campaigns.js' );

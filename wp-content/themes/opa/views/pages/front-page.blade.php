@@ -4,7 +4,7 @@
 @section('content')
 
 	
-	<div class="section first vh-100 rel flex column flex-vhcenter">
+	<div class="section first vh-100 rel flex column flex-vhcenter" id="firstscroll">
 		<div class="background fullh abs bg-cover" style="background-image:url('{{ get_template_directory_uri() }}/assets/dist/images/background-one.jpg')">
 		</div>
 		<header class="flex flex-vhcenter header transparent">
@@ -57,7 +57,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="main-content section second flex flex-center column rel pat">
+	<div class="main-content section second flex flex-center column rel pat" id="secondscroll">
 				<div class="section-with-video-holder flex rel">
 			<div class="section-with-video second flex row rel flex-between flex-vcenter">
 				<div class="second-section-content flex column rel">
@@ -77,8 +77,7 @@
 					</div>
 				</div>
 				<div class="video-holder rel">
-					<?php if (!empty( $video_holder) ) { ?>
-						<?php  ?>
+					@if(!empty($video_holder)){
 
 					<div class="video-inner-holder">
 						<!-- <video controls class="abs" id="video">
@@ -102,15 +101,16 @@
 							</svg>
 						</a>
 					</div>
-					<?php } ?>
+					@endif
+
 					@if(!empty($image_holder))
-						<?php echo("shemovedi gif ariyo") ?>
 
 					<div class="gif-inner-holder">
-						<div class="gif-holder bg-cover" style="background-image:url('{{ get_template_directory_uri() }}/assets/dist/images/tenor.gif')">
-							<span class="video-btn-before abs vh-align">
-							</span>
-							<a class="video-btn gif abs vh-align flex flex-vhcenter" id="gifbtn">
+						
+							<img data-gifffer="{{$image_holder['url']}}" data-gifffer-width="100%" data-gifffer-height="100%" />
+							<!-- <span class="video-btn-before abs vh-align">
+							</span> -->
+							<!-- <a class="video-btn gif abs vh-align flex flex-vhcenter" id="gifbtn">
 								
 								<?xml version="1.0" encoding="utf-8"?>
 								<svg version="1.1" id="Layer_1"  fill="#ffffff" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -166,18 +166,18 @@
 								</g>
 								</svg>
 
-							</a>
+							</a> -->
 						</div>
 					</div>
 					@endif
-						@if(!empty($image_holder_in_video_box) )
+					@if(!empty($image_holder_in_video_box) )
 						
 					<div class="image-inner-holder">
-						<div class="image-holder-one  bg-cover rel" style="background-image:url({{$image_holder_in_video_box['url']}})">
+						<div class="image-holder-one  bg-cover rel" style="background-image:url({{$image_holder_in_video_box['url']}})" >
 							
 						</div>
 					</div>
-						@endif
+					@endif
 				</div>
 
 			</div>
