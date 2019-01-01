@@ -583,12 +583,26 @@ html {
 .first .main-title{
 	    margin-bottom: 10px;
 }
-.logo{
+.logo,
+.logo-two{
 	width:154px;
 	position:relative;
     padding-top: 58px;
 }
-.logo a{
+.logo,
+.logo-two{
+	opacity:0;
+	z-index:0;
+	display:none;
+}
+.logo.on,
+.logo-two.on{
+	opacity:1;
+	z-index:1;
+	display:flex;
+}
+.logo a,
+.logo-two a{
 	position: absolute;
     top: 0px;
     left: 0px;
@@ -1041,15 +1055,48 @@ html {
     border-radius: calc(6.25em + 10px);
     z-index:-2;
 }
+.claim-holder{
+	    letter-spacing: 0.5px;
+}
+.header.not-transparent{
+	background:white;
+}
+.not-transparent .language{
+	    border: 2px solid #001242;
+
+}
+.not-transparent  .language a{
+	color:#001242;
+}
+.main-title-description{
+	letter-spacing:1px;
+}
+.language a{
+	text-transform:uppercase;
+}
 @media screen and (max-width: 1680px){
 	html {
 		font-size: 14px;
 	}
+	.benefit-text{
+		font-size:13px;
+		line-height:15px;
+	}
+	.features {
+	    width: 66%;
+	}
+
+	.feature {
+	    width: 27.27%;
+    }	
+    .text-number {
+	    width: 60px;
+	    margin-right: 15px;
+	}
 
 }
 @media screen and (max-width: 1440px){
-		
-	.logo {
+	.logo,.logo-two {
 	    width: 134px;
 	    padding-top: 49px;
 	}
@@ -1082,6 +1129,7 @@ html {
 	.claim {
 	    padding: 0 3.625rem;
 	    height: 4rem;
+	        letter-spacing: 1px;
 	}
 	.image-block {
 	    width: 30.68%;
@@ -1122,8 +1170,9 @@ html {
 	    width: 55px;
 	    height: 34px;
 	}
+
 	.section-benefit-holder {
-	    padding: 0 1.2em;
+	    padding:  1.2rem  1.2rem;
 	    height:auto;
 	}
 	.third-section-benefits .section-benefit-holder {
@@ -1134,6 +1183,7 @@ html {
 	}
 	.language .title.s{
     font-size: 1rem;
+
 	}
 }
 @media screen and (max-width: 1170px){
@@ -1155,7 +1205,7 @@ html {
 	.header-inner-holder {
 	    width: 92.84%;
 	}
-	.logo {
+	.logo,.logo-two {
 	    width: 95px;
 	    padding-top: 35px;
 	}
@@ -1170,6 +1220,8 @@ html {
 	}
 	.feature-main-description .main-title {
 	    margin-bottom: 1.1em;
+	        font-size: 1.45rem;
+    line-height: 2rem;
 	}
 	.text-holder-one, .text-holder-two {
 	    width: 50.85%;
@@ -1182,7 +1234,8 @@ html {
 	}
 	.image-text {
 	    margin-top: 30px;
-	    font-size: 0.8rem!important;
+	        font-size: 0.875rem;
+	    /*font-size: 0.8rem!important;*/
 	}
 
 
@@ -1194,13 +1247,12 @@ html {
 	.header{
 		height:80px;
 	}
-	.header.not-transparent{
-		background:white;
-	}
+
 	.header-inner-holder {
 	    width:89%;
 	}
-	.logo{
+	.logo,
+	.logo-two{
 		width: 109px;
 		padding-top: 41px;
 	}
@@ -1251,10 +1303,13 @@ html {
     margin-bottom: 40px;
     font-size: 1.2857142857142858rem;
     line-height: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.8rem;
 	}
 	.benefit-text {
 	    margin-left: 7%;
-	    font-size: 1rem!important;
+    font-size: 1rem!important;
+    line-height: 1.7rem;
 	}
 	.benefit-icon {
 	        width: 55px;
@@ -1268,6 +1323,7 @@ html {
 	}
 	.first .claim {
 	    height: 77px;
+	        letter-spacing: 1px;
 	}
 	.claim a{
 		font-size: 1.7142857142857142rem;
@@ -1299,6 +1355,8 @@ html {
 	    margin-bottom: 3.71rem;
 	    font-size: 1.28rem;
 	    line-height: 1.65em;
+	        font-size: 1.1rem;
+    line-height: 1.8rem;
 	}
 	.features-holder {
 	    padding: 3.1875rem 0 2rem;
@@ -1323,15 +1381,15 @@ html {
 	    margin-bottom:3rem;
 	}
 	.feature .flex.column{
-
-   	 margin-left: 2.14rem;
+	width: calc(100% - 30px - 2.14rem);
+   	margin-left: 2.14rem;
 	}
 	.feature .flex.column .feature-title {
-	    font-size: 1.42rem!important;
-	    line-height: 1.68em!important;
-	    padding-top: 3px;
+	    font-size: 1.3rem!important;
+	    line-height: 1.5em!important;
+	    padding-top: 0px;
 	    height: auto;
-	    margin-bottom: 2.14rem;
+	    margin-bottom: 1rem;
 	}
 	.feature .flex.column .feature-description{
 		    font-size: 1.28rem;
@@ -1339,14 +1397,20 @@ html {
 
 	}
 	.feature .flex.column .feature-description{
-		font-size: 1.1rem;
+		font-size: 0.9rem;
 	    line-height: 1.8rem;
 	}
+	.feature-main-description .main-description{
+		font-size: 1rem;
+	    line-height: 1.8rem;
+
+	}
 	.section.third {
-    padding-top: 0rem;
-    padding-bottom: 0px;
+	    padding-top: 0rem;
+	    padding-bottom: 0px;
 	}
 	.image-blocks-holder {
+		    padding-top: 3.5rem;
 	    margin-bottom: 3.5rem;
 	    width: 88%;
 	    flex-direction:column;
@@ -1368,7 +1432,9 @@ html {
 	}
 	.image-text-holder .text-title{
 		font-size: 1.57rem;
-    line-height: 1.8em;
+		font-size: 1.45rem;
+
+    /*line-height: 1.8em;*/
 	}
 	.title.xxl {
 	    font-size: 2.57rem;
@@ -1413,7 +1479,8 @@ html {
 	    line-height:1.46rem;
 	}
 	.third-section-benefits .benefit-icon {
-	    height: 56px;
+	    height: 42px;
+	    width: 42px;
 
 	}
 	.section.fourth {
@@ -1445,4 +1512,12 @@ html {
 	    line-height: 1.66rem;
 	    width: 75%;
 	}
+	.section-with-video-holder:after {
+	    width: 5%;
+	}
+	.section-with-video {
+	    width: 83%;
+	    margin: 0 6% 0 11%;
+	}
 }
+

@@ -9,7 +9,7 @@ if($lang['en']["active"]==1){
     $url = $lang["ka"]["url"];
 }
 else{
-    $lan = "en";
+    $lan = "eng";
     $url = $lang["en"]["url"];
 
 }
