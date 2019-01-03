@@ -77,15 +77,13 @@
 					</div>
 				</div>
 				<div class="video-holder rel">
-					@if(!empty($video_holder)){
+					@if(!empty($video_holder))
 
-					<div class="video-inner-holder">
-						<!-- <video controls class="abs" id="video">
-						  <source src="{{$video_holder}}" type="video/mp4">
-						</video> -->
-						<iframe class="abs" id="video"
-							src="{{$video_holder}}" frameborder="0" gesture="media" allow="encrypted-media;" allowfullscreen>
-						</iframe>
+					<div class="video-inner-holder" >
+						
+						<div id="player" myvideo="{{$video_holder}}">
+
+						</div>
 						<span class="video-btn-before abs vh-align">
 						</span>
 						<a class="video-btn abs vh-align flex flex-vhcenter" id="videobtn">
@@ -267,6 +265,40 @@
 		</div>
 		
 	</div>
+	<script>
+		  var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      // 3. This function creates an <iframe> (and YouTube player)
+      //    after the API code downloads.
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          // height: '390',
+          // width: '640',
+          playerVars: {rel: 0, showinfo: 0, controls: 0, playlist:'',autohide: 1 ,ecver: 2 },
+          videoId: $('#player').attr('myvideo'),
+          events: {
+            // 'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      }
+      function onPlayerStateChange(event) {
+        if (event.data == YT.PlayerState.ENDED || event.data == YT.PlayerState.PAUSED) {
+        		$("#videobtn").show();
+	  		$("#videobtn").siblings(".video-btn-before").show();
+        }
+        else
+        {
+$("#videobtn").hide();
+	  	$("#videobtn").siblings(".video-btn-before").hide();        	
+        }
+      }      
+	</script>
 </html>
 </body>
 

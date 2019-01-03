@@ -5,7 +5,8 @@ jQuery(document).ready(function() {
      scrollLogo();
      scrolltodiv();
      notTransparent();
-     changeHeaderOnScroll()
+     changeHeaderOnScroll();
+     //youtube()
 });
 $( window ).resize(function() {
      changeHeaderOnScroll()
@@ -21,13 +22,17 @@ $( window ).resize(function() {
 //         }
 //     })
 // }
+
+
+// function onPlayerReady(event) {
+//         event.target.playVideo();
+//       }
 function clickVideo(){
 
+
 	$('#videobtn').on('click', function(ev) {
-	  	$("#videobtn").hide();
-	  	$("#videobtn").siblings(".video-btn-before").hide();
-	 	$("#video").addClass("playing");
-	    $("#video")[0].src += "?autoplay=1&mute=1";
+	  	
+      player.playVideo();
   	});
 }
 function notTransparent(){

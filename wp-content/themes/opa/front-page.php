@@ -30,6 +30,14 @@ $button_four_text = get_field("button_four_text");
 $video_holder_main_title = get_field("video_holder_main_title");
 $video_holder_main_text = get_field("video_holder_main_text");
 $video_holder = get_field("video_holder");
+if (strpos($video_holder,'v=')!==false)
+{
+    $video_holder = substr($video_holder, strpos($video_holder,'v=')+2);
+    if (strpos($video_holder,'&')!==false)
+    {
+        $video_holder = substr($video_holder, 0, strpos($video_holder,'&'));
+    }
+}
 $image_holder = get_field("image_holder");
 $secondary_title = get_field("secondary_title");
 $secondary_description = get_field("secondary_description");
@@ -50,7 +58,6 @@ $linkedin = get_field("linkedin");
 // echo "<p>".$main_page_descr."</p>";
 $image_holder_in_video_box = get_field("image_holder_in_video_box");
 $socials_text = get_field("socials_text");
-var_dump($video_holder);
 
 
 Blade::loadPage( 'pages.front-page',[
