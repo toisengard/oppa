@@ -1084,25 +1084,29 @@ box-shadow: 0px 0px 0px 3px rgba(255,255,255,0.25)!important;
 	line-height: 2.1rem;
 }
 .section-benefit-holder{
--webkit-box-shadow: 0px 0px 7px 0px rgba(51,51,51,0.3);
--moz-box-shadow: 0px 0px 7px 0px rgba(51,51,51,0.3);
-box-shadow: 0px 0px 7px 0px rgba(51,51,51,0.3);
+	-webkit-box-shadow: 0px 0px 6px 0px rgba(51,51,51,0.2);
+	-moz-box-shadow: 0px 0px 6px 0px rgba(51,51,51,0.2);
+	box-shadow: 0px 0px 6px 0px rgba(51,51,51,0.2);
+
 }
 #player{
-
-	    position: absolute;
+    position: absolute;
     width: 100%;
     height: 100%;
     left: 0px;
     top: 0px;
-    }
+}
 @media screen and (max-width: 1680px){
+	.third-section-benefits .benefit-icon {
+    height: 49px;
+    width: 49px;
+}
 	html {
 		font-size: 14px;
 	}
 	.benefit-text{
 		font-size:13px;
-		line-height:15px;
+		line-height:20px;
 	}
 	.features {
 	    width: 66%;
@@ -1114,6 +1118,14 @@ box-shadow: 0px 0px 7px 0px rgba(51,51,51,0.3);
     .text-number {
 	    width: 60px;
 	    margin-right: 15px;
+	}
+	.benefit-icon {
+	    width: 41px;
+	    height: 38px;
+	}
+	.benefit-text {
+	    font-size: 12px!important;
+	    line-height: 16px;
 	}
 
 }
