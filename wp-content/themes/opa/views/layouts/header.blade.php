@@ -10,7 +10,7 @@
 		<meta name="description" content="{{$meta_descr}}">
     	<meta class="og_description" property="og:description" content="{{$meta_descr}}">
     	<meta property="og:image" content="{{$meta_image[url]}}">
-	    <link href="{{ get_template_directory_uri() . '/assets/dist/images/favicon.ico' }}" rel="icon" type="image/x-icon">
+	    <link href="{{ get_template_directory_uri() . '/assets/dist/images/favicon.svg' }}" rel="icon" type="image/x-icon">
 	    
 	    <!-- Facebook OG Tags -->
 	    <meta property="og:type" content=""/>

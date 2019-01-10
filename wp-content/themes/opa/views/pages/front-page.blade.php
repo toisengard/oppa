@@ -10,20 +10,20 @@
 		<header class="header flex flex-vhcenter  transparent" id="header">
 			<div class="header-inner-holder flex flex-between flex-vcenter">
 			<?php if (get_locale() == 'en_US') {?> 
-				<div class="logo rel flex flex-center bg-cover" style="background-image:url('{{ get_template_directory_uri() }}/assets/dist/images/main_logo.en.png')">
+				<div class="logo rel flex flex-center bg-cover" style="background-image:url('{{ get_template_directory_uri() }}/assets/dist/images/2_main_logo.en-01.svg')">
 					<a href="" alt=""  class="abs">
 					</a>
 				</div>
-				<div class="logo-two rel flex flex-center bg-cover" style="background-image:url('{{ get_template_directory_uri() }}/assets/dist/images/main_logo.en.colored.png')">
+				<div class="logo-two rel flex flex-center bg-cover" style="background-image:url('{{ get_template_directory_uri() }}/assets/dist/images/main_logo.en.svg')">
 					<a href="" alt=""  class="abs">
 					</a>
 				</div>
 			<?php }else{ ?>
-				<div class="logo rel flex flex-center bg-cover" style="background-image:url('{{ get_template_directory_uri() }}/assets/dist/images/main_logo.ka.png')">
+				<div class="logo rel flex flex-center bg-cover" style="background-image:url('{{ get_template_directory_uri() }}/assets/dist/images/2_main_logo.ka-01.svg')">
 					<a href="" alt=""  class="abs">
 					</a>
 				</div>
-				<div class="logo-two rel flex flex-center bg-cover" style="background-image:url('{{ get_template_directory_uri() }}/assets/dist/images/main_logo.ka.colored.png')">
+				<div class="logo-two rel flex flex-center bg-cover" style="background-image:url('{{ get_template_directory_uri() }}/assets/dist/images/main_logo.ka.svg')">
 					<a href="" alt=""  class="abs">
 					</a>
 				</div>
