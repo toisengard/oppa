@@ -433,6 +433,9 @@ html {
 	/*42px*/
 	font-size:2.625rem;
 	line-height:3.125rem;
+	/*changes*/
+/*	    font-size: 2.825rem;
+    line-height: 3.825rem;*/
 }
 .title.xxl{
 	/*font-size:53px;*/
@@ -571,6 +574,8 @@ html {
 		width:49%;
 		text-align:center;
 		    padding-bottom: 1em;
+		    /*changes*/
+		        font-size: 1.1rem;
 
 }
 .first-section-benefits{
@@ -654,7 +659,7 @@ html {
 	/*width:280px;*/
 }
 .claim{
-	padding:0 5.625rem;
+	padding:0 3.625rem;
 	height:5rem;
 	background: #87da06; /* Old browsers */
 	background: -moz-linear-gradient(left, #87da06 1%, #03afea 100%); /* FF3.6-15 */
@@ -664,10 +669,10 @@ html {
 	border-radius:2.5rem;
 	z-index:2;
 	border-radius:40px;
+	min-width:260px;
 	
 }
 .first .claim{
-	min-width:280px;
 }
 .claim:before{
 	content:'';
@@ -718,6 +723,7 @@ html {
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+	display:none;
 }
 .secont-section-content{
 	border:1px solid blue;
@@ -944,10 +950,11 @@ html {
 .footer{
 	border-top:1px solid #cadee8;
 	height:10.25rem;
+	background-color:#f8f8f8;
 }
 .follow-us{
 	right:4.46%;
-	width:194px;
+	width:52px;
 	top:2.6875rem;
 	align-items: center;
 }
@@ -965,7 +972,7 @@ html {
 	bottom:0px ;
 	left:0px;
 	width:100%;
-	height:5.125rem;
+	height:4.225rem;
 	background:url('../images/backgraund_down.png');
 	background-repeat: no-repeat;
 	background-position: center;
@@ -1096,11 +1103,41 @@ box-shadow: 0px 0px 0px 3px rgba(255,255,255,0.25)!important;
     left: 0px;
     top: 0px;
 }
-@media screen and (max-width: 1680px){
-	.third-section-benefits .benefit-icon {
-    height: 49px;
-    width: 49px;
+.follow-us .title{
+	display:none;
 }
+.quote-svg svg{
+	width: 12px;
+    height: 10px;
+    margin-top: 7px;
+    margin-right: 1rem;
+}
+.main-description-quote-holder,
+.main-description-bullets{
+    margin-bottom: 4.73em;
+}
+.bullet{
+	position:relative;
+	    padding-left: 1.8em;
+	margin-bottom:0.8rem;
+
+}
+.bullet:before{
+	content:'';
+	position:absolute;
+	left:0px;
+	top:0.65rem;
+	width:5px;
+	height:5px;
+	border-radius:5px;
+	background:black;
+}
+@media screen and (max-width: 1680px){
+
+	.third-section-benefits .benefit-icon {
+	    height: 49px;
+	    width: 49px;
+	}
 	html {
 		font-size: 14px;
 	}
@@ -1125,7 +1162,22 @@ box-shadow: 0px 0px 0px 3px rgba(255,255,255,0.25)!important;
 	}
 	.benefit-text {
 	    font-size: 12px!important;
-	    line-height: 16px;
+	    line-height: 20px;
+	}
+	.claim:before {
+	    width: calc(100% + 0.425rem);
+	    height: calc(100% + 0.425rem);
+	    left: -0.2125rem;
+	    top: -0.2125rem;
+	    border-radius: 45px;
+	}
+	.claim:after {
+	    content: '';
+	    position: absolute;
+	    width: calc(100% + 0.85rem);
+	    height: calc(100% + 0.85rem);
+	    left: -0.425rem;
+	    top: -0.425rem;
 	}
 
 }
@@ -1137,12 +1189,23 @@ box-shadow: 0px 0px 0px 3px rgba(255,255,255,0.25)!important;
 	.title.xl {
 	    font-size: 2rem;
 	    line-height: 2.6rem;
+	    /*changes*/
+        font-size: 2.1rem;
+	    line-height: 2.8rem;
+	}
+	.main-title-description {
+	    letter-spacing: 1px;
+	    font-size: 0.9rem!important;
 	}
 	.first-section-holder {
 	    font-size: 11px;
 	}
+	.first-section-content {
+	    width: 55%;
+	}
 	.first .main-description {
-	    font-size: 13px;
+	    font-size: 15px;
+	        width: 55%;
 	}
 	.feature {
 	    width: 28.27%;
@@ -1161,9 +1224,26 @@ box-shadow: 0px 0px 0px 3px rgba(255,255,255,0.25)!important;
 	    font-size: 1.1rem!important;
 	}
 	.claim {
-	    padding: 0 3.625rem;
+	 
+        padding: 0 1.625rem;
 	    height: 4rem;
-	        letter-spacing: 1px;
+	    letter-spacing: 1px;
+	    min-width: 199px;
+	}
+	.claim:before {
+	    width: calc(100% + 0.425rem);
+	    height: calc(100% + 0.425rem);
+	    left: -0.2125rem;
+	    top: -0.2125rem;
+	    border-radius: 45px;
+	}
+	.claim:after {
+	    content: '';
+	    position: absolute;
+	    width: calc(100% + 0.85rem);
+	    height: calc(100% + 0.85rem);
+	    left: -0.425rem;
+	    top: -0.425rem;
 	}
 	.image-block {
 	    width: 30.68%;
@@ -1197,8 +1277,8 @@ box-shadow: 0px 0px 0px 3px rgba(255,255,255,0.25)!important;
 	    margin-bottom: 1.2rem;
 	}
 	.feature-title{
-	font-size: 1rem!important;
-    line-height: 1.38em!important;
+		font-size: 1rem!important;
+	    line-height: 1.38em!important;
 	}
 	.benefit-icon {
 	    width: 55px;
@@ -1216,8 +1296,15 @@ box-shadow: 0px 0px 0px 3px rgba(255,255,255,0.25)!important;
 	    width: 64px;
 	}
 	.language .title.s{
-    font-size: 1rem;
+	    font-size: 1rem;
 
+	}
+	.section-benefit-holder .text.m{
+		font-size:12px;
+	}
+	.section-benefit-holder {
+
+    	padding: 7px 1.2em;
 	}
 }
 @media screen and (max-width: 1170px){
@@ -1254,8 +1341,8 @@ box-shadow: 0px 0px 0px 3px rgba(255,255,255,0.25)!important;
 	}
 	.feature-main-description .main-title {
 	    margin-bottom: 1.1em;
-	        font-size: 1.45rem;
-    line-height: 2rem;
+        font-size: 1.45rem;
+	    line-height: 2rem;
 	}
 	.text-holder-one, .text-holder-two {
 	    width: 50.85%;
@@ -1268,7 +1355,7 @@ box-shadow: 0px 0px 0px 3px rgba(255,255,255,0.25)!important;
 	}
 	.image-text {
 	    margin-top: 30px;
-	        font-size: 0.875rem;
+        font-size: 0.875rem;
 	    /*font-size: 0.8rem!important;*/
 	}
 
@@ -1533,13 +1620,14 @@ box-shadow: 0px 0px 0px 3px rgba(255,255,255,0.25)!important;
 	    height: 1rem;
 	}
 	.follow-us {
-	    width: 278px;
+	    width: auto;
 	    position: relative;
 	    top: auto;
 	    left: auto;
 	}
 	.follow-us .title{
 		font-size:1rem;
+
 	}
 	.third-section-benefits .benefit-text {
 	    font-size: 1.28rem!important;

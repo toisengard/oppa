@@ -71,7 +71,7 @@ function changeHeaderOnScroll(){
         var scroll = $(window).scrollTop();
         var div1 = $('#firstscroll').offset().top;
         var div1height = $('#firstscroll').height();
-        if(scroll > div1 + div1height){
+        if(scroll > div1 + div1height - 80){
             $('#header').removeClass("transparent").addClass('not-transparent');
             $("#header").find(".logo").removeClass("on");
           $("#header").find(".logo-two").addClass("on");

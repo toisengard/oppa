@@ -29,6 +29,12 @@ $button_four_url = get_field("button_four_url");
 $button_four_text = get_field("button_four_text");
 $video_holder_main_title = get_field("video_holder_main_title");
 $video_holder_main_text = get_field("video_holder_main_text");
+$video_holder_title_bullets = get_field("video_holder_title_bullets");
+$video_holder_description_bullets = get_field("video_holder_description_bullets");
+$bullets = get_field("bullets");
+$video_holder_title_quotes = get_field("video_holder_title_quotes");
+$video_holder_description_quotes = get_field("video_holder_description_quotes");
+$quote = get_field("quote");
 $video_holder = get_field("video_holder");
 if (strpos($video_holder,'v=')!==false)
 {
@@ -53,11 +59,14 @@ $fourth_text = get_field("fourth_text");
 $main_background = get_field("main_background");
 $facebook = get_field("facebook");
 $linkedin = get_field("linkedin");
-// postis id unda gadavce meore parametrad gadatargmnili postis id gadavce get fields apply filter worpress function wpml filter
-// echo "<h1>".$main_page_title."</h1>";
-// echo "<p>".$main_page_descr."</p>";
 $image_holder_in_video_box = get_field("image_holder_in_video_box");
-$socials_text = get_field("socials_text");
+$meta_title = get_field("meta_title");
+$meta_descr = get_field("meta_descr");
+$meta_image = get_field("meta_image");
+$page_url = get_page_link();
+
+// var_dump( $bullets);
+
 
 
 Blade::loadPage( 'pages.front-page',[
@@ -78,6 +87,12 @@ Blade::loadPage( 'pages.front-page',[
 	"button_four_text" => $button_four_text ,
 	"video_holder_main_title" => $video_holder_main_title ,
 	"video_holder_main_text" => $video_holder_main_text ,
+	"video_holder_title_bullets" => $video_holder_title_bullets ,
+	"video_holder_description_bullets" => $video_holder_description_bullets ,
+	"bullets" => $bullets ,
+	"video_holder_title_quotes" => $video_holder_title_quotes ,
+	"video_holder_description_quotes" => $video_holder_description_quotes ,
+	"quote" => $quote ,
 	"video_holder" => $video_holder ,
 	"image_holder" => $image_holder ,
 	"secondary_title" => $secondary_title ,
@@ -93,6 +108,11 @@ Blade::loadPage( 'pages.front-page',[
 	"facebook" => $facebook,
 	"linkedin" => $linkedin,
 	"main_background" => $main_background,
-	"socials_text" => $socials_text,
-	"image_holder_in_video_box" => $image_holder_in_video_box
+	// "socials_text" => $socials_text,
+	"image_holder_in_video_box" => $image_holder_in_video_box,
+	"meta_title" => $meta_title,
+	"meta_descr" => $meta_descr,
+	"meta_image" => $meta_image,
+	"page_url" => $page_url,
+
 ]);

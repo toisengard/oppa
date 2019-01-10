@@ -26,8 +26,12 @@ class Asset
 		add_action( 'wp_enqueue_scripts', function() use ( $class ) {
 			// Path To Theme Directory
 			$uri = get_template_directory_uri();
-
+		if (get_locale() == 'en_US') {
+			$class::registerStyle( 'all', $uri . '/assets/dist/css', 'fonts_eng.css' );
+		}else{
 			$class::registerStyle( 'all', $uri . '/assets/dist/css', 'fonts.css' );
+
+		}
 			$class::registerStyle( 'all', $uri . '/assets/dist/css', 'styles.css' );
 
 			// $class::registerStyle( [ 'front' 	=> true ], $uri . '/assets/dist/css', 'front-page.css' );

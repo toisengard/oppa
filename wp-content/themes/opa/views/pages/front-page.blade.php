@@ -8,15 +8,27 @@
 		<div class="background fullh abs bg-cover" style="background-image:url({{$main_background['url']}})">
 		</div>
 		<header class="header flex flex-vhcenter  transparent" id="header">
-			<div class="header-inner-holder flex flex-between flex-vcenter"> 
-				<div class="logo rel flex flex-center bg-cover" style="background-image:url('{{ get_template_directory_uri() }}/assets/dist/images/main-logo.png')">
+			<div class="header-inner-holder flex flex-between flex-vcenter">
+			<?php if (get_locale() == 'en_US') {?> 
+				<div class="logo rel flex flex-center bg-cover" style="background-image:url('{{ get_template_directory_uri() }}/assets/dist/images/main_logo.en.png')">
 					<a href="" alt=""  class="abs">
 					</a>
 				</div>
-				<div class="logo-two rel flex flex-center bg-cover" style="background-image:url('{{ get_template_directory_uri() }}/assets/dist/images/logo-01.png')">
+				<div class="logo-two rel flex flex-center bg-cover" style="background-image:url('{{ get_template_directory_uri() }}/assets/dist/images/main_logo.en.colored.png')">
 					<a href="" alt=""  class="abs">
 					</a>
 				</div>
+			<?php }else{ ?>
+				<div class="logo rel flex flex-center bg-cover" style="background-image:url('{{ get_template_directory_uri() }}/assets/dist/images/main_logo.ka.png')">
+					<a href="" alt=""  class="abs">
+					</a>
+				</div>
+				<div class="logo-two rel flex flex-center bg-cover" style="background-image:url('{{ get_template_directory_uri() }}/assets/dist/images/main_logo.ka.colored.png')">
+					<a href="" alt=""  class="abs">
+					</a>
+				</div>
+
+			<?php } ?>
 
 				<div class="language rel flex center" style="">
 					<a href="{{$url}}" alt="" class="title s white on flex flex-vhcenter abs">
@@ -61,14 +73,65 @@
 				<div class="section-with-video-holder flex rel">
 			<div class="section-with-video second flex row rel flex-between flex-vcenter">
 				<div class="second-section-content flex column rel">
+					@if(!empty($video_holder_main_title))
 					<div class="second-content-holder">
 						<div class="main-title title l blue">
 							{{$video_holder_main_title}}
 						</div>
 						<div class="main-description text blue">
+
 							{{$video_holder_main_text}}
 						</div>
 					</div>
+					@endif
+					@if(!empty($video_holder_title_bullets))
+
+					<div class="second-content-holder">
+						<div class="main-title title l blue">
+							{{$video_holder_title_bullets}}
+						</div>
+						<div class="main-description text blue">
+							{{$video_holder_description_bullets}}
+						</div>
+						<div class="main-description-bullets text blue">
+			 			@foreach($bullets as $bullet)
+							
+							<div class="bullet text m blue">
+								{{$bullet["bullet"]}}
+							</div>
+							@endforeach
+						</div>
+					</div>
+					@endif
+					@if(!empty($video_holder_title_quotes))
+					<div class="second-content-holder">
+						<div class="main-title title l blue">
+							{{$video_holder_title_quotes}}
+						</div>
+						<div class="main-description text blue">
+							{{$video_holder_description_quotes}}
+						</div>
+						<div class="main-description-quote-holder flex ">
+							<div class="quote-svg">
+								<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+									 width="512.5px" height="512.5px" viewBox="0 0 512.5 512.5" style="enable-background:new 0 0 512.5 512.5;" xml:space="preserve"
+									>
+								<g>
+									<path d="M112.5,208.25c61.856,0,112,50.145,112,112s-50.144,112-112,112s-112-50.145-112-112l-0.5-16
+										c0-123.712,100.288-224,224-224v64c-42.737,0-82.917,16.643-113.137,46.863c-5.817,5.818-11.126,12.008-15.915,18.51
+										C100.667,208.723,106.528,208.25,112.5,208.25z M400.5,208.25c61.855,0,112,50.145,112,112s-50.145,112-112,112
+										s-112-50.145-112-112l-0.5-16c0-123.712,100.287-224,224-224v64c-42.736,0-82.918,16.643-113.137,46.863
+										c-5.818,5.818-11.127,12.008-15.916,18.51C388.666,208.723,394.527,208.25,400.5,208.25z"/>
+								</g>
+								</svg>
+							</div>
+							<div class="quote  text m blue">
+								{{$quote}}
+							</div>
+							
+						</div>
+					</div>
+					@endif
 					<div class="claim-holder">
 						<a href="{{$button_two_url}}" class="claim btn btn-round title s flex flex-vhcenter white rel">
 							{{$button_two_text}}
